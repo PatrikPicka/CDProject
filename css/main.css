@@ -1,0 +1,29 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: block;
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+
+#navBrand{
+    padding: 0px;
+}
+
+.albumImg{
+    height: 200px;
+    width: 200px;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+
+#products{
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.fullWidth{
+    width: 100%;
+}
