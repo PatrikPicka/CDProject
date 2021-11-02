@@ -1,0 +1,33 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+.screenSection{
+    display: none;
+}
+
+.left-section-info{
+    width: 50%;
+}
+
+.left-section-info h3{
+    margin-bottom: 5px; 
+    padding-bottom: 0px;
+}
+.left-section-info h4 {
+    margin-top: 5px; padding-top: 0px;
+}
+.left-section-info p{
+    margin-bottom: 0px;
+}
+.left-section-info p span{
+    font-weight: 700;
+}
+.right-section-info{
+    width: 50%;
+}
+
+.songs{
+    margin-top: 20px;
+}

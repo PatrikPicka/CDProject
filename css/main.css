@@ -27,3 +27,38 @@ body {
 .fullWidth{
     width: 100%;
 }
+.border p{
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
+
+.border p:nth-child(odd){
+    background-color: rgba(255,255,255,0.2);
+}
+.cdImage{
+    width: 75%;
+}
+
+.colCDImg{
+height: 50vh;
+}
+
+.title {
+    border-bottom: 3px solid white;
+}
+.infoText p span{
+    font-weight: 700;
+}
+
+.additional-info p span{
+    font-weight: 700;
+}
+
+
+.printSection {
+    display: none;
+}
+
+.border {
+    border: none !important;
+}

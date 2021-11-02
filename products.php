@@ -34,9 +34,9 @@ if (!isset($url[0])) {
                         <a class="nav-link <?= $active ?>" href="./">Home</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search your music">
-                </form>
+                <div class="d-flex">
+                    <input class="form-control me-3" type="search" id="searchMusic" placeholder="Search" aria-label="Search your music">
+                </div>
             </div>
         </div>
     </nav>
@@ -70,10 +70,21 @@ if (!isset($url[0])) {
                         products.forEach(element => {
                             //první varianta přes table
                             //$("#tableBody").append('<tr><th ><img class="tlbImg" src="<?= WEB_URL ?>' + element.img + '" alt="CD Image"></th><td>' + element.title + '</td><td>' + element.artist + '</td><td><a href="./details/' + element.id + '" class="btn btn-success">Details</a></td></tr>');
-                            $("#products").append('<div class="generatedData" style="width: 288px; margin: 5px auto;"><div class="card" style="width: 288px; height: 400px; position: relative;"><img src="<?= WEB_URL ?>' + element.img + '" class="card-img-top albumImg" alt="' + element.title + '"><div class="card-body" style="color: black;"><h5 class="card-title text-center">' + element.title + '</h5><p class="card-text">Album ' + element.album + ' z roku ' + element.year + ' od ' + element.artist + '. </p><a href="<?= WEB_URL ?>details/' + element.id + '" class="btn btn-success" style="width: 50%; margin-left: 25%; margin-top: 10px; position: absolute; bottom: 0; left: 0;">Podrobnosti</a></div></div></div>');
+                            $("#products").append('<div class="generatedData" style="width: 288px; margin: 5px auto;"><div class="card" style="width: 288px; height: 400px; position: relative;"><img src="<?= WEB_URL ?>' + element.img + '" class="card-img-top albumImg" alt="' + element.title + '"><div class="card-body" style="color: black;"><h5 class="card-title text-center">' + element.title + '</h5><p class="card-text">' + element.description + '</p><a href="<?= WEB_URL ?>details/' + element.id + '" class="btn btn-success" style="width: 50%; margin-left: 25%; margin-top: 10px; position: absolute; bottom: 0; left: 0;">Podrobnosti</a></div></div></div>');
                         });
                     }
                 }
+            })
+        });
+
+        $("#searchMusic").on("input", () => {
+            $(".generatedData").remove();
+            let input = $("#searchMusic").val().toLowerCase();
+            let rs = products.filter(product => {
+                return product.description.toLowerCase().includes(input)
+            });
+            rs.forEach(element => {
+                $("#products").append('<div class="generatedData" style="width: 288px; margin: 5px auto;"><div class="card" style="width: 288px; height: 400px; position: relative;"><img src="<?= WEB_URL ?>' + element.img + '" class="card-img-top albumImg" alt="' + element.title + '"><div class="card-body" style="color: black;"><h5 class="card-title text-center">' + element.title + '</h5><p class="card-text">' + element.description + '</p><a href="<?= WEB_URL ?>details/' + element.id + '" class="btn btn-success" style="width: 50%; margin-left: 25%; margin-top: 10px; position: absolute; bottom: 0; left: 0;">Podrobnosti</a></div></div></div>');
             })
         });
     </script>
