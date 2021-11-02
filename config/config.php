@@ -12,4 +12,4 @@ define('DB_PASS', '');
 
 
 //Sessions
-define("ACCESS_CONTROL_ORIGIN", "127.0.0.1/taskFromWork");
+define("ACCESS_CONTROL_ORIGIN", "127.0.0.1/CDs");
